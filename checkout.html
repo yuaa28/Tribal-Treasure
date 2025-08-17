@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Tribal Treasure</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <span>Tribal Treasure</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-desktop">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="#" class="nav-link">About</a>
+          <a href="#" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Desktop Actions -->
+        <div class="actions-desktop">
+          <button class="action-btn">
+            <i class="fas fa-search"></i>
+          </button>
+          <a href="cart.html" class="action-btn cart-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </a>
+          <button id="theme-toggle" class="action-btn">
+            <i class="fas fa-moon"></i>
+          </button>
+          <a href="#" class="action-btn">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <nav>
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="#" class="nav-link">About</a>
+          <a href="#" class="nav-link">Contact</a>
+        </nav>
+        <div class="actions-mobile">
+          <button class="action-btn">
+            <i class="fas fa-search"></i>
+          </button>
+          <a href="cart.html" class="action-btn">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+          <button id="mobile-theme-toggle" class="action-btn">
+            <i class="fas fa-moon"></i>
+          </button>
+          <a href="#" class="action-btn">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Checkout Section -->
+  <section class="checkout">
+    <div class="container">
+      <div class="checkout-content">
+        <h1>Checkout</h1>
+        
+        <!-- Order Summary -->
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+          <div id="checkout-items">
+            <!-- Items will be loaded dynamically -->
+          </div>
+          <div class="summary-total">
+            <span>Total:</span>
+            <span id="checkout-total">₹0.00</span>
+          </div>
+        </div>
+
+        <!-- Checkout Form -->
+        <form id="checkout-form" class="checkout-form">
+          <h2>Shipping Information</h2>
+          
+          <div class="form-group">
+            <label for="full-name">Full Name *</label>
+            <input type="text" id="full-name" name="full-name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Shipping Address *</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="city">City *</label>
+            <input type="text" id="city" name="city" required>
+          </div>
+
+          <div class="form-group">
+            <label for="state">State *</label>
+            <input type="text" id="state" name="state" required>
+          </div>
+
+          <div class="form-group">
+            <label for="pincode">PIN Code *</label>
+            <input type="text" id="pincode" name="pincode" required>
+          </div>
+
+          <h2>Payment Method</h2>
+          
+          <div class="payment-methods">
+            <div class="payment-option">
+              <input type="radio" id="credit-card" name="payment" value="credit-card" required>
+              <label for="credit-card">
+                <i class="fas fa-credit-card"></i>
+                Credit Card
+              </label>
+            </div>
+
+            <div class="payment-option">
+              <input type="radio" id="debit-card" name="payment" value="debit-card">
+              <label for="debit-card">
+                <i class="fas fa-credit-card"></i>
+                Debit Card
+              </label>
+            </div>
+
+            <div class="payment-option">
+              <input type="radio" id="upi" name="payment" value="upi">
+              <label for="upi">
+                <i class="fas fa-mobile-alt"></i>
+                UPI
+              </label>
+            </div>
+
+            <div class="payment-option">
+              <input type="radio" id="net-banking" name="payment" value="net-banking">
+              <label for="net-banking">
+                <i class="fas fa-university"></i>
+                Net Banking
+              </label>
+            </div>
+          </div>
+
+          <div class="payment-details" id="credit-card-details">
+            <div class="form-group">
+              <label for="card-number">Card Number *</label>
+              <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="expiry">Expiry Date *</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+              </div>
+
+              <div class="form-group">
+                <label for="cvv">CVV *</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123">
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-details" id="upi-details">
+            <div class="form-group">
+              <label for="upi-id">UPI ID *</label>
+              <input type="text" id="upi-id" name="upi-id" placeholder="username@upi">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Place Order</button>
+            <a href="cart.html" class="btn-secondary">Back to Cart</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html> 
